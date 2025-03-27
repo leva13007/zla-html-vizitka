@@ -1,0 +1,172 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Poppins', sans-serif;
+}
+
+:root{
+  --primary-color: #162636;
+  --secondary-color: #20d8c1;
+  --accent-color: white;
+}
+
+body{
+  background-color: var(--primary-color);
+
+  color: var(--accent-color);
+}
+
+.container{
+  width: 920px;
+  margin: 0 auto;
+}
+
+.page{
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+  .header__logo{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .nav-list{
+    display: flex;
+    gap: 24px;
+
+    .nav-list__item{
+      font-size: 1.25rem;
+      font-weight: 300;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      padding: 8px 16px;
+
+      &:hover{
+        border-color: var(--accent-color);
+        opacity: 0.7;
+      }
+
+      &.nav-list__item--active{
+        font-weight: 700;
+        color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+    }
+  }
+}
+
+.card{
+  flex-grow: 1;
+  display: grid;
+  grid-template-areas: "social content avatar";
+
+  .social{
+    grid-area: social;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+
+    .social__list{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .social__item{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--secondary-color);
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover{
+          background-color: var(--secondary-color);
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .card__content{
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+
+    .card__greeting{
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    .card__name{
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .card__role{
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+    .card__description{
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    .card__buttons{
+      display: flex;
+      gap: 16px
+    }
+  }
+
+  .card__avatar{
+    grid-area: avatar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.footer{
+  height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.button{
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  cursor: pointer;
+  &.button--primary{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+
+    &:hover{
+      background-color: var(--accent-color);
+    }
+  }
+
+  &.button--outline{
+    border: 1px solid var(--secondary-color);
+    color: var(--accent-color);
+
+    &:hover{
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+    }
+  }
+}
